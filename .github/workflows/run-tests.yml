@@ -55,3 +55,11 @@ jobs:
 
     - name: Run test suite
       run: vendor/bin/phpunit
+
+    - name: Update coverage badge
+      run: composer badge-gen
+
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "docs: update coverage badge"
